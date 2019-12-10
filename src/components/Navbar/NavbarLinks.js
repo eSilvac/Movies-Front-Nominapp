@@ -16,7 +16,7 @@ function NavbarLinks({ user, logoutUser }) {
       {!Object.keys(user).length ? (
         <Nav className="ml-auto">
           <Link className="nav-link mr-2" to="/login">Login</Link>
-          <Link className="nav-link" to="/register">Sign up</Link>
+          <Link className="nav-link" to="/register">Register</Link>
         </Nav>
       ) : (
         <Nav className="ml-auto">

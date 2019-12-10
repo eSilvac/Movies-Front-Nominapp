@@ -1,15 +1,21 @@
 import React from 'react';
+import { Redirect } from 'react-router-dom';
 
 // Utilities
-import UserRegisterForm from './../../components/User/UserRegisterForm'
+import UserRegisterForm from './../../components/User/UserRegisterForm';
 
 // Bootstrap
-import Container from 'react-bootstrap/Container'
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
-import Card from 'react-bootstrap/Card'
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Card from 'react-bootstrap/Card';
 
-function Login() {
+// Redux
+import { connect } from 'react-redux';
+
+function Register({ user }) {
+  if (Object.keys(user).length) return <Redirect to='/'/>;
+
   return (
     <Container>
       <Row className="justify-content-center">
@@ -28,4 +34,8 @@ function Login() {
   );
 }
 
-export default Login;
+const mapStateToProps = state => ({
+  user: state.user
+});
+
+export default connect(mapStateToProps)(Register);
