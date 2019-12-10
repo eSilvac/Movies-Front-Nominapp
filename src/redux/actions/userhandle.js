@@ -9,12 +9,23 @@ const dispatchAction = (dispatch, type, payload) => {
   });
 };
 
+export function verifyToken(token) {
+  return async dispatch => {
+    try {
+      const { data } = await Api.get('user')
+      dispatchAction(dispatch, CREATE_USER, data);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+}
+
 export function getUser(payload) {
   return async dispatch => {
     try {
       const { data } = await Api.post('login', payload)
       localStorage.setItem('authenticationToken', data.token);
-      dispatchAction(dispatch, CREATE_USER, { email: payload.email });
+      dispatchAction(dispatch, CREATE_USER, data.user);
     } catch (error) {
       console.log(error);
     }
@@ -26,7 +37,7 @@ export function createUser(payload) {
     try {
       const { data } = await Api.post('register', payload)
       localStorage.setItem('authenticationToken', data.token);
-      dispatchAction(dispatch, CREATE_USER, { email: payload.email });
+      dispatchAction(dispatch, CREATE_USER, data.user);
     } catch (error) {
       console.log(error);
     }

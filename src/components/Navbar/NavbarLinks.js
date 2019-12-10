@@ -20,6 +20,7 @@ function NavbarLinks({ user, logoutUser }) {
         </Nav>
       ) : (
         <Nav className="ml-auto">
+          <Navbar.Text className="mr-3">{user.email}</Navbar.Text>
           <Nav.Link className="nav-link text-white" onClick={logoutUser}>Log Out</Nav.Link>
         </Nav>
       )}
