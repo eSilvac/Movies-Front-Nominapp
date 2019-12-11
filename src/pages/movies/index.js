@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Redirect } from 'react-router-dom';
 
 // Utilities
-import List from './../../components/List/List';
+import Movies from './../../components/Movies/Movies';
 import MoviesApi from './../../utils/moviesApi';
 
 // Bootstrap
@@ -15,10 +14,13 @@ import { connect } from 'react-redux';
 
 function ShowList() {
   const [movieList, setmovieList] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    MoviesApi.get(this.props.path + "?api_key=3d7fd0461ae8d0f2e808c37fb41950d7")
-      .then( data => console.log(data))
+    MoviesApi.get("/popular?api_key=3d7fd0461ae8d0f2e808c37fb41950d7")
+      .then( data => {
+        setmovieList(data.data.results)
+      })
       .catch( error => console.log(error))
   }, []);
 
@@ -26,6 +28,7 @@ function ShowList() {
     <Container>
       <Row className="justify-content-center">
         <Col xs={12}>
+          <Movies movies={movieList} />
         </Col>
       </Row>
     </Container>

@@ -38,6 +38,17 @@ export function createList(payload, callback) {
   }
 }
 
+export function addMovieToList(listId, movieId) {
+  return async (dispatch, getState) => {
+    try {
+      const { data } = await Api.patch('list/' + listId, { movieId })
+      dispatchAction(dispatch, SET_LIST, data);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+}
+
 export function deleteList(listId, callback) {
   return async dispatch => {
     try {

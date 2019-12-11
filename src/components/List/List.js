@@ -3,7 +3,7 @@ import React from 'react';
 import { useHistory } from "react-router-dom";
 
 // Components
-//import NavbarUserLists from './NavbarUserList';
+import Movies from './../Movies/Movies';
 
 // Bootstrap
 import Button from 'react-bootstrap/Button';
@@ -27,6 +27,10 @@ function List({ user, list, deleteList }) {
           <Button variant="danger" onClick={() => deleteList(list._id, redirectToHome)}>Delete</Button>
         </div>
       </div>
+      {Object.keys(list).length ? (
+        <Movies movies={list.movies} />
+        ) : ( "" )
+      }
     </div>
   );
 }
