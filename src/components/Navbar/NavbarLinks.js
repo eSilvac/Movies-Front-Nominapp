@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { LinkContainer } from 'react-router-bootstrap'
 
 // Components
-import NavbarUserLists from './NavbarUserList';
+import NavbarDropdownLists from './NavbarDropdownList';
 
 // Bootstrap
 import Nav from 'react-bootstrap/Nav';
@@ -27,13 +27,7 @@ function NavbarLinks({ user, logoutUser }) {
         <>
         <Navbar.Text className="ml-3 small">{user.email}</Navbar.Text>
         <Nav className="ml-auto">
-          <NavDropdown title="Movies List" className="text-white">
-            <LinkContainer to="/list/create">
-              <NavDropdown.Item>Create New List</NavDropdown.Item>
-            </LinkContainer>
-            <NavDropdown.Divider />
-            <NavbarUserLists />
-          </NavDropdown>
+          <NavbarDropdownLists />
           <Nav.Link className="nav-link text-white" onClick={logoutUser}>Log Out</Nav.Link>
         </Nav>
         </>

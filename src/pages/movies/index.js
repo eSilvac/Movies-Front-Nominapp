@@ -14,7 +14,6 @@ import { connect } from 'react-redux';
 
 function ShowList() {
   const [movieList, setmovieList] = useState([]);
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     MoviesApi.get("/popular?api_key=3d7fd0461ae8d0f2e808c37fb41950d7")
