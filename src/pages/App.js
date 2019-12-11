@@ -5,6 +5,9 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Navbar from '../components/Navbar/Navbar';
 import Register from './users/register';
 import Login from './users/login';
+import ShowList from './lists/show';
+import CreateList from './lists/create';
+import Movies from './movies/index';
 
 // Redux
 import { connect } from 'react-redux';
@@ -22,6 +25,9 @@ function App({ verifyToken }) {
       <Switch>
         <Route path="/login" component={Login} />
         <Route path="/register" component={Register} />
+        <Route path="/list/create" component={CreateList} />
+        <Route path="/list/:listId" component={ShowList} />
+        <Route path="/" component={Movies} />
       </Switch>
     </Router>	
   );

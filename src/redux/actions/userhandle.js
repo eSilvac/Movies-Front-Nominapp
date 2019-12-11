@@ -13,7 +13,7 @@ export function verifyToken(token) {
   return async dispatch => {
     try {
       const { data } = await Api.get('user')
-      dispatchAction(dispatch, CREATE_USER, data);
+      dispatchAction(dispatch, GET_USER, data);
     } catch (error) {
       console.log(error);
     }

@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import Navbar from 'react-bootstrap/Navbar';
 import Container from 'react-bootstrap/Container'
 
-// User
+// Components
 import NavbarLinks from './NavbarLinks'
 
 function PageNavbar() {

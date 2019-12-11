@@ -54,7 +54,7 @@ function UserLoginForm({ getUser }) {
               ): null}
             </Form.Group>
 
-            <Button variant="success" type="submit">Create User</Button>
+            <Button variant="success" type="submit">Login</Button>
           </Form>
         }
       </Formik>
