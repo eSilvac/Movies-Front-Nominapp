@@ -1,7 +1,6 @@
 // Configurations
 import React from 'react';
 import { Link } from "react-router-dom";
-import { LinkContainer } from 'react-router-bootstrap'
 
 // Components
 import NavbarDropdownLists from './NavbarDropdownList';
@@ -9,7 +8,6 @@ import NavbarDropdownLists from './NavbarDropdownList';
 // Bootstrap
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
 
 // Redux
 import { connect } from 'react-redux';

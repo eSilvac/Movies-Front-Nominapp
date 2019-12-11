@@ -20,7 +20,7 @@ function UserLoginForm({ getUser }) {
           getUser(data)
           setSubmitting(false);
         }}
-        //validationSchema={ LoginUserSchema }
+        validationSchema={ LoginUserSchema }
       >
         {({ values, errors, touched, handleChange, handleBlur, handleSubmit }) => 
           <Form onSubmit={handleSubmit}>

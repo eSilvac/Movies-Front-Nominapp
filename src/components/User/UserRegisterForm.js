@@ -20,7 +20,7 @@ function UserRegisterForm({ createUser }) {
           createUser(data)
           setSubmitting(false);
         }}
-        //validationSchema={ CreateUserSchema }
+        validationSchema={ CreateUserSchema }
       >
         {({ values, errors, touched, handleChange, handleBlur, handleSubmit }) => 
           <Form onSubmit={handleSubmit}>
